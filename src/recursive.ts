@@ -1,9 +1,9 @@
-function fibonacciRecursive(n: number): number {
-  if (n <= 1) {
-    return n
+function fibonacciRecursive(position: number): number {
+  if (position <= 1) {
+    return position
   }
 
-  const result = fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
+  const result = fibonacciRecursive(position - 1) + fibonacciRecursive(position - 2)
 
   return result
 }

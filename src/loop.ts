@@ -1,11 +1,11 @@
-function fibonacciLoop(n: number): number {
-  const numbersArray: number[] = [0, 1]
+function fibonacciLoop(position: number): number {
+  const memoizedResults: number[] = [0, 1]
 
-  for (let i = 2; i <= n; i++) {
-    numbersArray[i] = numbersArray[i - 1] + numbersArray[i - 2]
+  for (let i = 2; i <= position; i++) {
+    memoizedResults[i] = memoizedResults[i - 1] + memoizedResults[i - 2]
   }
 
-  return numbersArray[n]
+  return memoizedResults[position]
 }
 
 export { fibonacciLoop as default }
