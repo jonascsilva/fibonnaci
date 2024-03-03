@@ -9,7 +9,7 @@ function fibonacciRecursive(position: number): number {
 }
 
 function validate(position: number) {
-  if (position < 0) return
+  if (position < 0 || !Number.isInteger(position)) return
 
   return fibonacciRecursive(position)
 }

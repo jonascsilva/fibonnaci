@@ -8,4 +8,10 @@ function fibonacciLoop(position: number): number {
   return memoizedResults[position]
 }
 
-export { fibonacciLoop as default }
+function validate(position: number) {
+  if (position < 0 || !Number.isInteger(position)) return
+
+  return fibonacciLoop(position)
+}
+
+export { validate as default }

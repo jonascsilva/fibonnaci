@@ -2,6 +2,16 @@ import { assertEquals } from 'https://deno.land/std@0.150.0/testing/asserts.ts'
 import fibonacciRecursive from './recursive.ts'
 import fibonacciLoop from './loop.ts'
 
+Deno.test('fibonacci(-2.4) should return undefined', () => {
+  assertEquals(fibonacciRecursive(-2.4), undefined)
+  assertEquals(fibonacciLoop(-2.4), undefined)
+})
+
+Deno.test('fibonacci(2.4) should return undefined', () => {
+  assertEquals(fibonacciRecursive(2.4), undefined)
+  assertEquals(fibonacciLoop(2.4), undefined)
+})
+
 Deno.test('fibonacci(-16) should return undefined', () => {
   assertEquals(fibonacciRecursive(-16), undefined)
   assertEquals(fibonacciLoop(-16), undefined)
