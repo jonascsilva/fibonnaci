@@ -8,4 +8,10 @@ function fibonacciRecursive(position: number): number {
   return result
 }
 
-export { fibonacciRecursive as default }
+function validate(position: number) {
+  if (position < 0) return
+
+  return fibonacciRecursive(position)
+}
+
+export { validate as default }

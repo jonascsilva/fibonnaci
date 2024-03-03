@@ -1,5 +1,5 @@
-import fibonacci from './src/loop.ts'
-// import fibonacci from './src/recursive.ts'
+// import fibonacci from './src/loop.ts'
+import fibonacci from './src/recursive.ts'
 
 // Exemplo de uso:
 const n = 10
