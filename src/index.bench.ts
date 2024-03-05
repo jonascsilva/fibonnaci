@@ -9,14 +9,6 @@ Deno.bench('Loop', { group: 'Fibonacci - 1' }, () => {
   fibonacciLoop(1)
 })
 
-Deno.bench('Recursive', { group: 'Fibonacci - 2' }, () => {
-  fibonacciRecursive(2)
-})
-
-Deno.bench('Loop', { group: 'Fibonacci - 2' }, () => {
-  fibonacciLoop(2)
-})
-
 Deno.bench('Recursive', { group: 'Fibonacci - 5' }, () => {
   fibonacciRecursive(5)
 })
@@ -31,6 +23,14 @@ Deno.bench('Recursive', { group: 'Fibonacci - 10' }, () => {
 
 Deno.bench('Loop', { group: 'Fibonacci - 10' }, () => {
   fibonacciLoop(10)
+})
+
+Deno.bench('Recursive', { group: 'Fibonacci - 20' }, () => {
+  fibonacciRecursive(20)
+})
+
+Deno.bench('Loop', { group: 'Fibonacci - 20' }, () => {
+  fibonacciLoop(20)
 })
 
 Deno.bench('Recursive', { group: 'Fibonacci - 30' }, () => {
