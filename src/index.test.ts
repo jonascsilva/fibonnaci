@@ -1,7 +1,5 @@
 import { assertEquals } from 'https://deno.land/std@0.218.0/assert/mod.ts'
-import { fibonacci1, fibonacci2, fibonacci3 } from './index.ts'
-
-const functionsArray = [fibonacci1, fibonacci2, fibonacci3]
+import { functionsArray } from './index.ts'
 
 const testHelper = (input: number, expected?: number) => () => {
   for (const func of functionsArray) {
