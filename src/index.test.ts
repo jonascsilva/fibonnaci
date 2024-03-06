@@ -1,48 +1,30 @@
-import { assertEquals } from 'https://deno.land/std@0.150.0/testing/asserts.ts'
-import fibonacciRecursive from './recursive.ts'
-import fibonacciLoop from './loop.ts'
+import { assertEquals } from 'https://deno.land/std@0.218.0/assert/mod.ts'
+import { fibonacci1, fibonacci2, fibonacci3 } from './index.ts'
 
-Deno.test('fibonacci(-2.4) should return undefined', () => {
-  assertEquals(fibonacciRecursive(-2.4), undefined)
-  assertEquals(fibonacciLoop(-2.4), undefined)
-})
+const functionsArray = [fibonacci1, fibonacci2, fibonacci3]
 
-Deno.test('fibonacci(2.4) should return undefined', () => {
-  assertEquals(fibonacciRecursive(2.4), undefined)
-  assertEquals(fibonacciLoop(2.4), undefined)
-})
+const testHelper = (input: number, expected?: number) => () => {
+  for (const func of functionsArray) {
+    assertEquals(func(input), expected)
+  }
+}
 
-Deno.test('fibonacci(-16) should return undefined', () => {
-  assertEquals(fibonacciRecursive(-16), undefined)
-  assertEquals(fibonacciLoop(-16), undefined)
-})
+Deno.test('fibonacci(-2.4) should return undefined', testHelper(-2.4, undefined))
 
-Deno.test('fibonacci(-1) should return undefined', () => {
-  assertEquals(fibonacciRecursive(-1), undefined)
-  assertEquals(fibonacciLoop(-1), undefined)
-})
+Deno.test('fibonacci(2.4) should return undefined', testHelper(2.4, undefined))
 
-Deno.test('fibonacci(0) should return 0', () => {
-  assertEquals(fibonacciRecursive(0), 0)
-  assertEquals(fibonacciLoop(0), 0)
-})
+Deno.test('fibonacci(-16) should return undefined', testHelper(-16, undefined))
 
-Deno.test('fibonacci(1) should return 1', () => {
-  assertEquals(fibonacciRecursive(1), 1)
-  assertEquals(fibonacciLoop(1), 1)
-})
+Deno.test('fibonacci(-1) should return undefined', testHelper(-1, undefined))
 
-Deno.test('Fibonacci of 2 should be 1', () => {
-  assertEquals(fibonacciRecursive(2), 1)
-  assertEquals(fibonacciLoop(2), 1)
-})
+Deno.test('fibonacci(-1) should return undefined', testHelper(-1, undefined))
 
-Deno.test('fibonacci(5) should return 5', () => {
-  assertEquals(fibonacciRecursive(5), 5)
-  assertEquals(fibonacciLoop(5), 5)
-})
+Deno.test('fibonacci(0) should return undefined', testHelper(0, 0))
 
-Deno.test('fibonacci(10) should return 55', () => {
-  assertEquals(fibonacciRecursive(10), 55)
-  assertEquals(fibonacciLoop(10), 55)
-})
+Deno.test('fibonacci(1) should return 1', testHelper(1, 1))
+
+Deno.test('fibonacci(2) should return 1', testHelper(2, 1))
+
+Deno.test('fibonacci(5) should return 5', testHelper(5, 5))
+
+Deno.test('fibonacci(10) should return 55', testHelper(10, 55))

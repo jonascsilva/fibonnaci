@@ -1,9 +1,8 @@
 // import fibonacci from './src/loop.ts'
-import fibonacci from './src/recursive.ts'
+import { fibonacci1, fibonacci2, fibonacci3 } from './src/index.ts'
 
-// Exemplo de uso:
 const n = 10
-const result = fibonacci(n)
+const result = fibonacci1(n)
 
 console.log(`${n}º = ${result}`)
 
