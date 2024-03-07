@@ -1,21 +1,21 @@
-function fibonacci2(n: number): number {
-  const memo: number[] = Array(n + 1).fill(0)
+function fibonacci2(position: number): number {
+  const memo: number[] = Array(position + 1).fill(0)
 
-  return fibonacciMemo(n, memo)
+  return fibonacciMemo(position, memo)
 }
 
-function fibonacciMemo(n: number, memo: number[]): number {
-  if (n <= 1) {
-    return n
+function fibonacciMemo(position: number, memo: number[]): number {
+  if (position <= 1) {
+    return position
   }
 
-  if (memo[n] !== 0) {
-    return memo[n]
+  if (memo[position] !== 0) {
+    return memo[position]
   }
 
-  memo[n] = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo)
+  memo[position] = fibonacciMemo(position - 1, memo) + fibonacciMemo(position - 2, memo)
 
-  return memo[n]
+  return memo[position]
 }
 
 export { fibonacci2 }
